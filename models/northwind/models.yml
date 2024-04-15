@@ -1,0 +1,105 @@
+# models/northwind/models.yml
+version: 2
+
+models:
+  - name: customer_orders
+    columns:
+      - name: customer_id
+        meta:
+          dimension:
+            type: number
+            label: 'Customer ID'
+            description: 'The unique identifier for a customer.'
+      - name: company_name
+        meta:
+          dimension:
+            type: string
+            label: 'Company Name'
+            description: 'The name of the customer company.'
+      - name: num_products_ordered
+        meta:
+          dimension:
+            type: number
+            label: 'Number of Products Ordered'
+            description: 'The total number of products ordered.'
+      - name: total_order_amount
+        meta:
+          dimension:
+            type: number
+            label: 'Total Order Amount'
+            description: 'The total amount of the order.'
+
+  - name: customer_segmentation
+    columns:
+      - name: customer_id
+        meta:
+          dimension:
+            type: number
+            label: 'Customer ID'
+            description: 'The unique identifier for a customer.'
+      - name: company_name
+        meta:
+          dimension:
+            type: string
+            label: 'Company Name'
+            description: 'The name of the customer company.'
+      - name: num_orders
+        meta:
+          dimension:
+            type: number
+            label: 'Number of Orders'
+            description: 'The total number of orders for the customer.'
+      - name: total_spent
+        meta:
+          dimension:
+            type: number
+            label: 'Total Spent'
+            description: 'The total amount spent by the customer.'
+      - name: customer_segment
+        meta:
+          dimension:
+            type: string
+            label: 'Customer Segment'
+            description: 'Segmentation based on order count and total spend.'
+
+  - name: product_sales
+    columns:
+      - name: product_name
+        meta:
+          dimension:
+            type: string
+            label: 'Product Name'
+            description: 'The name of the product.'
+      - name: num_orders
+        meta:
+          dimension:
+            type: number
+            label: 'Number of Orders'
+            description: 'The total number of orders for the product.'
+      - name: total_sales
+        meta:
+          dimension:
+            type: number
+            label: 'Total Sales'
+            description: 'The total sales amount for the product.'
+
+  - name: revenue_by_region
+    columns:
+      - name: ship_region
+        meta:
+          dimension:
+            type: string
+            label: 'Ship Region'
+            description: 'The region to which the order is shipped.'
+      - name: num_orders
+        meta:
+          dimension:
+            type: number
+            label: 'Number of Orders'
+            description: 'The total number of orders for the ship region.'
+      - name: total_sales
+        meta:
+          dimension:
+            type: number
+            label: 'Total Sales'
+            description: 'The total sales amount for the ship region.'
